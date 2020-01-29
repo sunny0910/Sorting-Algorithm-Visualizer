@@ -5,7 +5,7 @@ import sys
 def plot(arr):
     plt.clf()
     plt.bar(range(len(arr)), arr, align='edge', width=1, data=arr)
-    plt.pause(0.001)
+    plt.pause(0.00000001)
 
 
 def on_close(event):
