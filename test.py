@@ -20,7 +20,7 @@ def test(sorting_function):
     return 'Passed'
 
 
-functions = [s.bubble_sort, s.heap_sort, s.selection_sort,
-             s.insertion_sort, s.quick_sort, s.merge_sort]
+functions = [s.bubble_sort, s.heap_sort, s.selection_sort, s.insertion_sort,
+             s.quick_sort, s.merge_sort, s.shell_sort, s.counting_sort]
 for function in functions:
     print('Testing:   ', function.__name__.ljust(16), test(function))

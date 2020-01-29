@@ -13,8 +13,8 @@ def get_random_array(length):
 
 array_size = 50
 
-algorithms = [s.bubble_sort, s.heap_sort, s.selection_sort,
-              s.insertion_sort, s.quick_sort, s.insertion_sort, s.merge_sort]
+algorithms = [s.bubble_sort, s.heap_sort, s.selection_sort, s.counting_sort,
+              s.insertion_sort, s.quick_sort, s.insertion_sort, s.merge_sort, s.shell_sort]
 
 if len(sys.argv) < 2:
     print('Usage:', 'python', sys.argv[0], 'function_name', '\n')

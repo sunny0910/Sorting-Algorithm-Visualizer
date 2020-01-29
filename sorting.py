@@ -41,6 +41,41 @@ class Array:
     def get_len(self):
         return len(self.values)
 
+    def get_max_value(self):
+        return max(self.values)
+
+    def get_min_value(self):
+        return min(self.values)
+
+def shell_sort(nums):
+    n = nums.get_len()
+    gap = n // 2
+
+    while gap > 0:
+        for i in range(gap, n):
+            temp = nums.values[i]
+            j = i
+            while j >= gap and nums.values[j - gap] > temp:
+                nums.swap(j, j - gap)
+                j -= gap
+            nums.set(j, temp)
+        gap //= 2
+
+def counting_sort(nums):
+    max_value = nums.get_max_value()
+    min_value = nums.get_min_value()
+    _range = max_value - min_value + 1
+    count = [0] * _range
+    output = [0] * nums.get_len()
+    for i in range(0, nums.get_len()):
+        count[nums.values[i] - min_value] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for i in range(nums.get_len() - 1, -1, -1):
+        output[count[nums.values[i] - min_value] - 1] = nums.values[i]
+        count[nums.values[i] - min_value] -= 1
+    for i in range(0, nums.get_len()):
+        nums.set(i, output[i])
 
 def bubble_sort(nums):  # n^2
     # We set swapped to True so the loop looks runs at least once
